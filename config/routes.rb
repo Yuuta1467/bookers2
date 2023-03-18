@@ -4,7 +4,7 @@
    root to: "homes#top"
 
    resources :books, only: [:new, :create, :index, :show, :destroy]
-   resources :users, only: [:show, :edit]
+   resources :users, only: [:show, :edit, :index]
 
    get "/homes/about" => "homes#about", as: "about"
  end
