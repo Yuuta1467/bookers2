@@ -8,7 +8,9 @@
 <% end %>
 
 <h1>All users</h1>
+
 <% @users.each do |user| %>
+　<%= image_tag user.get_profile_image(100, 100) %>
   <%= user.name %>
 
 <% end %>
