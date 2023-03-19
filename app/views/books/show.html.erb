@@ -1,10 +1,15 @@
 <h1>Books/show</h1>
+
 <div>
   <p>投稿ユーザー画像：<%= image_tag @book.user.get_profile_image(100,100) %></p>
+  <%= @book.user.name %>
+  <%= @book.user.introduction %>
   <%= @book.title %>
   <%= @book.body %>
-  <%= @book.user.name %>
 
+  
+  <%= render 'list', books: @books %>
+  
   <% if @book.user == current_user %>
    <%= link_to "Edit", edit_book_path(@book) %>
     <%= link_to "Destroy", book_path(@book), method: :delete %>
