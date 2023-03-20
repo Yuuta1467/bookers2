@@ -1,5 +1,9 @@
 <h1>Users/index</h1>
 
+<%= render 'users/list2',user: current_user %>
+
+<%= render 'books/list', book: @books %>
+
 <h1>All users</h1>
 
 <% @users.each do |user| %>
@@ -9,4 +13,3 @@
 
 <% end %>
 
-<%= render 'books/list', books: @books %>

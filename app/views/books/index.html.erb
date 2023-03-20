@@ -1,6 +1,8 @@
 <h1>Books#index</h1>
 
-<%= render 'list', books: @books %>
+<%= render 'users/list2',user: current_user %>
+
+<%= render 'list', book: @book %>
 
 <% @books.each do |book| %>
 <div>
