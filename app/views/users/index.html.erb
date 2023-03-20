@@ -1,16 +1,41 @@
-<h1>Users/index</h1>
+<main>
+  <div class="container px-5 px-sm-0">
+    <div class="row">
+      <div class="col-md-3">
+        <%= render 'users/list2',user: current_user %>
+        <%= render 'books/list', book: @books %>
+      </div>
+      <div class="col-md-8 offset-md-1">
+        <h2>Users</h2>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>image</th>
+              <th>name</th>
+              <th colspan="3"></th>
+            </tr>
+          </thead>
+          <% @users.each do |user| %>
+          <tbody>
+            <tr>
+              <td>
+                <%= image_tag user.get_profile_image(100, 100) %>
+              </td>
+              <td>
+                <%= user.name %>
+              </td>
+              <td>
+                <!--%= link_to "Show" user_path(user.id) do %-->
+              </td>
+            </tr>
+          </tbody>
+          <% end %>
+        </table>
+      </div>
+    </div>
+  </div>
+</main>
 
-<%= render 'users/list2',user: current_user %>
 
-<%= render 'books/list', book: @books %>
 
-<h1>All users</h1>
-<table class="table table-striped">
-  <% @users.each do |user| %>
-　  <%= image_tag user.get_profile_image(100, 100) %>
-    <%= user.name %>
-    <%= user.introduction %>
-</table>
-
-<% end %>
 
