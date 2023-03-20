@@ -1,12 +1,17 @@
 <h1>Books/show</h1>
 
   <%= render 'users/list2',user: @user %>
+
+　<%= render 'list', book: @books %>
 <div>
-  <%= @book.title %>
+  <%= link_to user_path(@user) do %>
+    <%= @user.name %>
+  <% end %>
+
+  <%= link_to book_path(@book) do %>
+    <%= @book.title %>
+  <% end %>
   <%= @book.body %>
-
-
-  <%= render 'list', book: @books %>
 
   <% if @book.user == current_user %>
    <%= link_to "Edit", edit_book_path(@book) %>

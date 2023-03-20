@@ -5,11 +5,12 @@
 <%= render 'books/list', book: @books %>
 
 <h1>All users</h1>
-
-<% @users.each do |user| %>
-　<%= image_tag user.get_profile_image(100, 100) %>
-  <%= user.name %>
-  <%= user.introduction %>
+<table class="table table-striped">
+  <% @users.each do |user| %>
+　  <%= image_tag user.get_profile_image(100, 100) %>
+    <%= user.name %>
+    <%= user.introduction %>
+</table>    
 
 <% end %>
 

@@ -6,12 +6,14 @@
 
 <% @books.each do |book| %>
 <div>
-　<p>投稿ユーザー画像：<%= image_tag book.user.get_profile_image(100,100) %></p>
-  <%= book.user.name %>
-  <%= link_to book_path(book.id) do %>
-    <%= book.title %>
-  <% end %>
-  <%= book.body %>
+  <table class="table table-striped">
+　  <p>投稿ユーザー画像：<%= image_tag book.user.get_profile_image(100,100) %></p>
+    <%= book.user.name %>
+    <%= link_to book_path(book.id) do %>
+      <%= book.title %>
+    <% end %>
+    <%= book.body %>
+  </table>  
 
 </div>
 <% end %>
