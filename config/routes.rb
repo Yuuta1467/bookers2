@@ -6,5 +6,5 @@
    resources :books, only: [:new, :create, :index, :show, :destroy, :edit, :update]
    resources :users, only: [:show, :edit, :index, :update]
 
-   get "/homes/about" => "homes#about", as: "about"
+   get "/home/about" => "homes#about", as: "about"
  end
