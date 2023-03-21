@@ -12,11 +12,14 @@
       </tr>
     </tbody>
   </table>
-  <% if user == current_user %>
   <div class="row">
   <li class="btn btn-outline-secondary btn-block">
-    <%= link_to "プロフィール編集", edit_user_path(user) %>
+    <% if user == current_user %>
+      <%= link_to "プロフィール編集", edit_user_path(user) %>
+    <% else %>
+      <%= link_to "プロフィール編集", user_path(current_user) %>
+    <% end %>
   </li>
   </div>
-  <% end %>
+
 <!--%= render 'users/list', users: @users %-->
